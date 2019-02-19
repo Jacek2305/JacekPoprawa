@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase base = openOrCreateDatabase("baza.db", Context.MODE_PRIVATE,  null);
 
+        // test commit
+
         base.execSQL(Settings.tableCountry); //ttt
         base.execSQL(Settings.tableCity);
         base.execSQL(Settings.tableProduct);
