@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         result += "\n Miasta: \n";
         for (City city : cities) result += city.getName() + "\n";
 
-        result += "\n Produkty: \n";
-        for (Product product : products) result += product.getName() + "\n";
+        result += "\n Kraje wg ID kraju = 1: \n";
+        ArrayList<City> citiesByCountryID = cityDAO.getAllByCountryID(1);
+        for (City city : citiesByCountryID) result += city.getName() + "\n";
 
-//        Toast.makeText(getApplicationContext(), cityDAO.getOneByID(2).getName(), Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
 
     }
