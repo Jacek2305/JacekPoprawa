@@ -29,9 +29,9 @@ public class CityDAO implements IDAO<City> {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             City city = new City();
-            city.setID(cursor.getInt(1));
-            city.setName(cursor.getString(2));
-            city.setCountryID(cursor.getInt(3));
+            city.setID(cursor.getInt(0));
+            city.setName(cursor.getString(1));
+            city.setCountryID(cursor.getInt(2));
             list.add(city);
             cursor.moveToNext();
         }

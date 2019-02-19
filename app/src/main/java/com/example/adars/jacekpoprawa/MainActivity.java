@@ -21,16 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase base = openOrCreateDatabase("baza.db", Context.MODE_PRIVATE,  null);
 
-        // test commit
-
-        base.execSQL(Settings.tableCountry); //ttt
+        base.execSQL(Settings.tableCountry);
         base.execSQL(Settings.tableCity);
         base.execSQL(Settings.tableProduct);
-
-        base.execSQL("INSERT INTO Country (name) VALUES ('Polska')");
-        base.execSQL("INSERT INTO Country (name) VALUES ('Niemcy')");
-        base.execSQL("INSERT INTO City (name, idCountry) VALUES ('Bydgoszcz', 1)");
-        base.execSQL("INSERT INTO City (name, idCountry) VALUES ('Berlin', 2)");
 
         base.close();
 
