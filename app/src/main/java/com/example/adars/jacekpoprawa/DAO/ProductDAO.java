@@ -9,9 +9,7 @@ import com.example.adars.jacekpoprawa.DomainModel.Product;
 
 import java.util.ArrayList;
 
-/**
- * Created by Adam Bachorz on 19.02.2019.
- */
+
 public class ProductDAO extends ADAO<Product> {
 
     public ProductDAO(Activity activity) {

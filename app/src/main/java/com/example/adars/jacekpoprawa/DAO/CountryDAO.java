@@ -9,9 +9,7 @@ import com.example.adars.jacekpoprawa.DomainModel.Product;
 
 import java.util.ArrayList;
 
-/**
- * Created by Adam Bachorz on 06.02.2019.
- */
+
 public class CountryDAO extends ADAO<Country> {
 
 
