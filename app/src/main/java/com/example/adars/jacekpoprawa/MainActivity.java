@@ -8,7 +8,11 @@ import android.widget.Toast;
 
 import com.example.adars.jacekpoprawa.Core.Settings;
 import com.example.adars.jacekpoprawa.DAO.CityDAO;
+import com.example.adars.jacekpoprawa.DAO.CountryDAO;
+import com.example.adars.jacekpoprawa.DAO.ProductDAO;
 import com.example.adars.jacekpoprawa.DomainModel.City;
+import com.example.adars.jacekpoprawa.DomainModel.Country;
+import com.example.adars.jacekpoprawa.DomainModel.Product;
 
 import java.util.ArrayList;
 
@@ -27,13 +31,31 @@ public class MainActivity extends AppCompatActivity {
 
         base.close();
 
+        /*Testowanie danych (można później wykomentować*/
         CityDAO cityDAO = new CityDAO(this);
+        CountryDAO countryDAO = new CountryDAO(this);
+        ProductDAO productDAO = new ProductDAO(this);
 
-        ArrayList<City> l = cityDAO.getAll();
-        String result = "";
+        /*Test insert (Tak się wrzuca obiekty do bazy. Analogicznie dla innych Encji)*/
+//        City newCity = new City();
+//        newCity.setName("Warszawa");
+//        newCity.setCountryID(1);
+//        cityDAO.insert(newCity);
 
-        for (City city : l) result += city.getName() + "\n";
+        ArrayList<City> cities = cityDAO.getAll();
+        ArrayList<Country> countries = countryDAO.getAll();
+        ArrayList<Product> products = productDAO.getAll();
 
+        String result = "Państwa: \n";
+        for (Country country : countries) result += country.getName() + "\n";
+
+        result += "\n Miasta: \n";
+        for (City city : cities) result += city.getName() + "\n";
+
+        result += "\n Produkty: \n";
+        for (Product product : products) result += product.getName() + "\n";
+
+//        Toast.makeText(getApplicationContext(), cityDAO.getOneByID(2).getName(), Toast.LENGTH_LONG).show();
         Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
 
     }
