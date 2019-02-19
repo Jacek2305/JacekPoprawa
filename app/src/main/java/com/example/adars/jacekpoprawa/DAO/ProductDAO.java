@@ -24,7 +24,7 @@ public class ProductDAO extends ADAO<Product> {
         connectDB(); // otwarcie bazy danych (jeżeli z jakiegoś powodu jest zamknięta)
 
         /* Utworzenie kursora który będzie wskazywał na dane z konkretnej tabeli w bazie */
-        Cursor cursor =  base.query("Product",null,null,null, null, null, null);
+        Cursor cursor =  base.query(entityName(),null,null,null, null, null, null);
         cursor.moveToFirst(); // przejście do pierwszego wiersza
 
         /* Ta pętla będzie działaś tak długo, aż kursor nie przeleci przez wszystkie wiersze */
@@ -54,12 +54,12 @@ public class ProductDAO extends ADAO<Product> {
         connectDB();
 
         /* Potrzebujemy tablicę z nazwami kolumn. Nie wolno przegapić żadnej columny !!! */
-        String[] columns = {"idProduct", "name", "idCity", "idCountry"};
+        String[] columns = {"id" + entityName(), "name", "idCity", "idCountry"};
 
         /* Teraz w trzecim parametrze kursora ustawiliśmy warunek
            potrzebujemy wiersza o ID równym tej liczbie, którą podajemy w argumencie metody (nawias u góry)
            W drugim parametrze jest nasza tablica z nazwami kolumn*/
-        Cursor cursor =  base.query("Product", columns,"idProduct = " + ID,null,null, null, null, null);
+        Cursor cursor =  base.query(entityName(), columns,"id" + entityName() +" = " + ID,null,null, null, null, null);
         cursor.moveToFirst(); // przechodimy tylko do pierwszego elementu i ustawiamy dane poniżej
 
         Product product = new Product();
@@ -87,7 +87,7 @@ public class ProductDAO extends ADAO<Product> {
         record.put("name", product.getName());
         record.put("idCity", product.getCityID());
         record.put("idCountry", product.getCountryID());
-        base.insert("Product", null, record); // zapisujemy rekord w bazie
+        base.insert(entityName(), null, record); // zapisujemy rekord w bazie
         base.close(); // zamykamy połączenie
     }
 }

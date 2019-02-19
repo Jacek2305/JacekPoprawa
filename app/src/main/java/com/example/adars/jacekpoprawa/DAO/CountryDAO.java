@@ -25,7 +25,7 @@ public class CountryDAO extends ADAO<Country> {
         connectDB(); // otwarcie bazy danych (jeżeli z jakiegoś powodu jest zamknięta)
 
         /* Utworzenie kursora który będzie wskazywał na dane z konkretnej tabeli w bazie */
-        Cursor cursor =  base.query("Country",null,null,null, null, null, null);
+        Cursor cursor =  base.query(entityName(),null,null,null, null, null, null);
         cursor.moveToFirst(); // przejście do pierwszego wiersza
 
         /* Ta pętla będzie działaś tak długo, aż kursor nie przeleci przez wszystkie wiersze */
@@ -53,12 +53,12 @@ public class CountryDAO extends ADAO<Country> {
         connectDB();
 
         /* Potrzebujemy tablicę z nazwami kolumn. Nie wolno przegapić żadnej columny !!! */
-        String[] columns = {"idCountry", "name"};
+        String[] columns = {"id" + entityName(), "name"};
 
         /* Teraz w trzecim parametrze kursora ustawiliśmy warunek
            potrzebujemy wiersza o ID równym tej liczbie, którą podajemy w argumencie metody (nawias u góry)
            W drugim parametrze jest nasza tablica z nazwami kolumn*/
-        Cursor cursor =  base.query("Country", columns,"idCountry = " + ID,null,null, null, null, null);
+        Cursor cursor =  base.query(entityName(), columns,"id" + entityName() + " = " + ID,null,null, null, null, null);
         cursor.moveToFirst(); // przechodimy tylko do pierwszego elementu i ustawiamy dane poniżej
 
         Country country = new Country();
@@ -82,7 +82,7 @@ public class CountryDAO extends ADAO<Country> {
            automatycznie).
            Po lewej dokładna nazwa tabeli w bazie, a po prawej wartość */
         record.put("name", country.getName());
-        base.insert("Country", null, record); // zapisujemy rekord w bazie
+        base.insert(entityName(), null, record); // zapisujemy rekord w bazie
         base.close(); // zamykamy połączenie
     }
 }
