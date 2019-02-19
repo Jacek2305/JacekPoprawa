@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase base = openOrCreateDatabase("baza.db", Context.MODE_PRIVATE,  null);
 
+        /* Tworzenie tabel jeśli te nie istnieją */
         base.execSQL(Settings.tableCountry);
         base.execSQL(Settings.tableCity);
         base.execSQL(Settings.tableProduct);

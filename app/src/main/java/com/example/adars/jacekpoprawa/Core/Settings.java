@@ -1,6 +1,8 @@
 package com.example.adars.jacekpoprawa.Core;
 
 public abstract class Settings {
+
+    /* Zapytania do tworzenia tabeli jeśli te nie istnieją */
     public static String tableCity =
             "CREATE TABLE IF NOT EXISTS City (idCity INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name STRING NOT NULL, idCountry INTEGER REFERENCES Country (idCountry) NOT NULL);";
     public static String tableCountry =
