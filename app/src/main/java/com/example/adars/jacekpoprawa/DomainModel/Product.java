@@ -5,7 +5,6 @@ package com.example.adars.jacekpoprawa.DomainModel;
  */
 public class Product extends Entity {
 
-    private String name;
     private int cityID;
     private int countryID;
 
@@ -26,19 +25,20 @@ public class Product extends Entity {
         this.countryID = countryID;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getCityID() {
         return cityID;
     }
 
     public void setCityID(int cityID) {
         this.cityID = cityID;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "cityID=" + cityID +
+                ", countryID=" + countryID +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

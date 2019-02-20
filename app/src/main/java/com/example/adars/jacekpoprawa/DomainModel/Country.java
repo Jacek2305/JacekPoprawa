@@ -5,21 +5,7 @@ package com.example.adars.jacekpoprawa.DomainModel;
  */
 public class Country extends Entity {
 
-    private String name;
-
     public Country() {
     }
 
-    public Country(int ID, String name) {
-        this.ID = ID;
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
