@@ -1,7 +1,7 @@
 package com.example.adars.jacekpoprawa.DomainModel;
 
 /**
- * Created by Adam Bachorz on 06.02.2019.
+ * Created on 06.02.2019.
  */
 public class Product extends Entity {
 

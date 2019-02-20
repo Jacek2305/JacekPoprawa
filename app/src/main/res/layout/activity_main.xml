@@ -16,45 +16,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:text="Kraj" />
+            android:text="Pomiar" />
 
-        <Spinner
-            android:id="@+id/spinner_countries"
+        <EditText
+            android:id="@+id/edit_text_acc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="0.0" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:text="Miasto" />
+            android:text="Nazwa Pomiaru" />
 
-        <Spinner
-            android:id="@+id/spinner_cities"
+        <EditText
+            android:id="@+id/edit_text_name_acc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:text="Nazwa produktu" />
+            android:text="Osoba" />
 
-        <EditText
-            android:id="@+id/edit_text_product_name"
+        <Spinner
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Dodaj pomiar" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:text="Dodaj produkt" />
+            android:text="Zapisz" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

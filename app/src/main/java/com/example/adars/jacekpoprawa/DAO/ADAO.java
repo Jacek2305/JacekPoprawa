@@ -26,7 +26,7 @@ public abstract class ADAO<E> {
 
     protected void connectDB() {
         if (base == null || !base.isOpen()) {
-            base = this.activity.openOrCreateDatabase("baza.db", Context.MODE_PRIVATE,  null);
+            base = this.activity.openOrCreateDatabase("baza1.db", Context.MODE_PRIVATE,  null);
         }
     }
 

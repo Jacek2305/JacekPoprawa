@@ -7,7 +7,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 /**
- * Created by Adam Bachorz on 20.02.2019.
+ * Created on 20.02.2019.
  */
 public class StandardAccelerometer implements SensorEventListener {
     private Context context;

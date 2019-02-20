@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.example.adars.jacekpoprawa.DomainModel.City;
 import com.example.adars.jacekpoprawa.DomainModel.Product;
 
 import java.util.ArrayList;
